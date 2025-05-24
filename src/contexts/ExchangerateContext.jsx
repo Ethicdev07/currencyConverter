@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useEffect, useContext } from "react";
+const APP_ID = import.meta.env.VITE_APP_ID;
 
 // eslint-disable-next-line react-refresh/only-export-components
 const ExchangerateContext = createContext();
@@ -13,7 +14,7 @@ const ExchangeProvider = ({children}) => {
     const [rates, setRates] = useState ([]);
     const [loading, setLoading] = useState(true);
     const [error,setError] = useState("");
-    const apiUrl = `https://openexchangerates.org/api/latest.json?app_id=${import.meta.env.VITE_APP_ID}`;
+    const apiUrl = `https://openexchangerates.org/api/latest.json?app_id=${APP_ID}`;
   
 
     useEffect(()=> {
